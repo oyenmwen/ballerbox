@@ -15,7 +15,7 @@ Basketball subscription service that allows users to receive a monthly box of ba
 
 Features user authentication, salting and password hashing, password resets, cookies and sessions,
 
-input validation, email dispatch. Payments, API and database integrations, MVC model. <br /><br />
+input validation, email dispatch. Payments, API and database integrations, MVC model. <br /><br /><br />
 
 
 
