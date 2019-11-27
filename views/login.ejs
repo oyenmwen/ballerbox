@@ -1,0 +1,45 @@
+<%-include("partials/header")-%>
+<%- include("modals/modal-signup.ejs"); -%>
+
+
+<link rel="stylesheet" href="/css/signin.css">
+
+<div class="container pt-md-5 mt-md-5">
+  <div class="row px-3 px-lg-0">
+
+    <div class="col col-12 col-lg-8 my-4 px-4 pt-4 pb-5 px-lg-5 points3">
+
+      <form class="form-signin" action="/login" method="post">
+        <img class="mb-4" src="/docs/4.3/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
+        <h1 class="">Sign in</h1>
+        <h6>Email address:</h6>
+        <label for="username" class="sr-only">Email address</label>
+        <input type="email" id="username" name="username" class="form-control" required autofocus>
+        <h6>Password:</h6>
+        <label for="password" class="sr-only">Password</label>
+        <input type="password" id="password" name="password" class="form-control" required>
+        <a href="#">Forgot Password?</a>
+        <div class="checkbox mb-3">
+          <label class="remember">
+            <input type="checkbox" value="remember-me"> Remember me
+          </label>
+        </div>
+        <button class="btn btn-lg btnn btn-secondary btn-blockk btn-md" type="submit">Sign in</button>
+
+      </form>
+    </div>
+
+    <div class="col col-12 col-lg-3 my-lg-4 mb-4 px-5 py-4 points2">
+      <h4>Not registered yet?</h4>
+      <p>Register now to receive exclusive offers, discounts and products</p>
+      <button class="btn btnn btn-md btn-secondary btn-block signup" type="submit" data-toggle="modal" data-target="#signupModal">Register Now</button>
+
+
+    </div>
+  </div>
+</div>
+
+
+<hr>
+
+<%- include("partials/footer.ejs"); -%>

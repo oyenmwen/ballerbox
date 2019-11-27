@@ -1,0 +1,36 @@
+<%-include("../partials/header")-%>
+<%- include("../modals/modal-signin.ejs"); -%>
+<%- include("../modals/modal-signup.ejs"); -%>
+<script src="/js/confetti.js"></script>
+<script>
+  $(document).ready(function() {
+    confetti.start();
+    setInterval(function() {
+      confetti.stop();
+    }, 1500);
+  });
+</script>
+<%if(loggedin){%>
+<div class="container px-5 text-left mt-md-5 pt-5">
+  <h1 class="h1 py-3">Thank You! 🎉</h1>
+  <hr>
+  <h4 class="my-4 mt-5">Thank you for your order!</h4>
+  <p>Your order number is <strong><em><%=order._id%></em></strong></p>
+  <p>Anticipate an email with payment confirmation and shipping updates.</p>
+  <a class="btn btn-secondary mx-1 btn-lg text-white px-5 button my-5 bg-orange py-3 " href="/user-orders">My Orders</a>
+
+</div>
+<%}else{%>
+
+
+<div class="container px-5 text-left mt-md-5 pt-5">
+  <h1 class="h1 py-3">Welcome to the Baller Box Family! 🎉</h1>
+  <hr>
+  <h4 class="my-4 mt-5">Thank you for your order!</h4>
+  <p>Your order number is <strong><em><%=order._id%></em></strong></p>
+  <p>Sign Up to continously check order status and receive updates, exclusive offers and news.</p>
+  <a class="btn btn-secondary mx-1 btn-lg text-white px-5 button my-5 bg-orange py-3 " href="#" data-toggle="modal" data-target="#signupModal">Sign Up</a>
+
+</div>
+<%}%>
+<%- include("../partials/footer.ejs"); -%>

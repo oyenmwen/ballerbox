@@ -1,0 +1,54 @@
+<!-- Modal -->
+<div class="modal fade text-center" id="signinModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content text-center">
+      <div class="modal-header py-3 mb-4">
+        <div class="container">
+          <div class="row py-4">
+            <div class="col col-3">
+              <img src="/images/logo-footer.png" width="25" alt="">
+            </div>
+            <div class="col col-6 modal-title">
+              <h5>SIGN IN</h5>
+            </div>
+            <div class="col col-3 ">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-body text-center px-5 pb-5">
+        <div class="container text-center">
+          <% if((!(errors === undefined || errors.length == 0))&&(login)&&(modal)){%>
+            <script>$('document').ready(function(){$('#signinModal').modal('show')});</script>
+            <div class="alert pb-0 alert-danger">
+              <%errors.forEach(function(message){%>
+              <p><%=message.msg%></p>
+            </div>
+        <%});%>
+      <%}%>
+          <form class="" action="/login" method="post">
+            <div class="form-group">
+              <input type="email" class="form-control py-2" id="username" aria-describedby="emailHelp" name="username" placeholder="Email Address" required>
+            </div>
+            <div class="form-group">
+              <input type="password" class="form-control py-2" id="password-signin" name="password" placeholder="Password" required>
+            </div>
+            <div class="form-group py-2 form-check">
+              <input type="checkbox" class="form-check-input" id="check">
+              <label class="form-check-label mr-5" for="check" style="font-size:0.8em">Keep me logged in</label>
+              <a href="/reset" class="ml-5" style="font-size:0.7em">Forgotten your password?</a>
+            </div>
+            <input type="hidden" name="_csrf" value="<%= locals.csrfToken %>">
+            <button type="submit"  class="btn btn-block btn-secondary py-2 mt-4">LOG IN</button>
+          </form>
+        </div>
+      </div>
+      <div class="container pt-0 pb-4">
+        <p style="font-size:0.8em;color:grey">Not a member? <a href="#signupModal" style="color:black" data-bm-close="#signinModal" data-bm-open="#signupModal"> Join Now</a></p>
+      </div>
+    </div>
+  </div>
+</div>

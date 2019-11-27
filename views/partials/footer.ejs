@@ -1,63 +1,82 @@
 <!-- Footer -->
-
-    <footer class="container py-5">
-      <div class="row">
-        <div class="col-12 col-md">
-          <img src="public/images/logo-footer.png" width="24" height="24" alt="">
-          <small class="d-block mb-3 text-muted">&copy; 2019</small>
-        </div>
-        <div class="col-6 col-md">
-          <h5>Shop</h5>
-          <ul class="list-unstyled text-small">
-            <li><a class="text-muted" href="#">Subscription</a></li>
-            <li><a class="text-muted" href="#">Gift Subscription</a></li>
-            <li><a class="text-muted" href="#">Instagram</a></li>
-
-            <li><a class="text-muted" href="#">Facebook</a></li>
-
-          </ul>
-        </div>
-        <div class="col-6 col-md">
-          <h5>Resources</h5>
-          <ul class="list-unstyled text-small">
-            <li><a class="text-muted" href="#">Contact Us</a></li>
-            <li><a class="text-muted" href="#">My Account</a></li>
-            <li><a class="text-muted" href="#">FAQS</a></li>
-
-          </ul>
-        </div>
-        <div class="col-6 col-md">
-          <h5>About Us</h5>
-          <ul class="list-unstyled text-small">
-            <li><a class="text-muted" href="#">Our Story</a></li>
-            <li><a class="text-muted" href="#">Our Products</a></li>
-            <li><a class="text-muted" href="#">Cancellation Policy</a></li>
-
-          </ul>
-        </div>
-        <div class="col-6 col-md">
-          <h5>Legal</h5>
-          <ul class="list-unstyled text-small">
-
-            <li><a class="text-muted" href="#">Shipping</a></li>
-            <li><a class="text-muted" href="#">Privacy</a></li>
-            <li><a class="text-muted" href="#">Terms</a></li>
-          </ul>
-        </div>
-      </div>
-    </footer>
+<hr>
+<footer class="container py-5">
+  <div class="row">
+    <div class="col-12 col-md">
+      <img src="/images/logo-footer.webp" width="24" height="24" alt="">
+      <small class="d-block mb-3 text-muted">&copy; 2019</small>
+    </div>
+    <div class="col-6 col-md">
+      <h5 class="sub">Shop</h5>
+      <ul class="list-unstyled text-small">
+        <li><a class="text-muted" href="/products">Subscription</a></li>
+        <li><a class="text-muted" href="/products">Gift Subscription</a></li>
 
 
-    <!-- Bootstrap core JavaScript
+      </ul>
+    </div>
+    <div class="col-6 col-md">
+      <h5 class="sub">Resources</h5>
+      <ul class="list-unstyled text-small">
+        <li><a class="text-muted" href="/contact">Contact Us</a></li>
+        <li><a class="text-muted" href="/account">My Account</a></li>
+        <li><a class="text-muted" href="/how-it-works">How it Works</a></li>
+
+
+      </ul>
+    </div>
+    <div class="col-6 col-md">
+      <h5 class="sub">About Us</h5>
+      <ul class="list-unstyled text-small">
+        <li><a class="text-muted" href="/products">Our Products</a></li>
+        <li><a class="text-muted" href="/cancellation">Cancellation Policy</a></li>
+
+      </ul>
+    </div>
+    <div class="col-6 col-md">
+      <h5 class="sub">Legal</h5>
+      <ul class="list-unstyled text-small">
+
+        <li><a class="text-muted" href="/shipping">Shipping</a></li>
+        <li><a class="text-muted" href="/privacy-policy">Privacy</a></li>
+        <li><a class="text-muted" href="/terms">Terms</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+
+<!-- Bootstrap core JavaScript
     ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
+<!-- Placed at the end of the document so the pages load faster -->
 
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    <script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="/js/typewriter.js" charset="utf-8"></script>
+<script src="/js/countdown.js"></script>
+<script>
+  $('document').ready(function() {
 
-      $('.carousel').carousel();
-    </script>
-  </body>
+    let now = new Date();
+    let current = new Date(now.getFullYear(), now.getMonth() + 1, 1);
+    countdown(current);
+
+    $('.carousel').carousel();
+
+    $('#signupModal').on('hidden.bs.modal', function(e) {
+      $('.alert').remove();
+    });
+
+    $(function() {
+      $('[data-bm-close][data-bm-open]').on('click', function() {
+        var $this = $(this);
+        $($this.data('bm-close')).one('hidden.bs.modal', function() {
+          $($this.data('bm-open')).modal('show');
+        }).modal('hide');
+      });
+    });
+  });
+</script>
+</body>
+
 </html>

@@ -1,0 +1,104 @@
+<%-include("../partials/header")-%>
+<%- include("../modals/modal-signin.ejs"); -%>
+<%- include("../modals/modal-signup.ejs"); -%>
+
+
+<div class="container pb-md-5 my-md-5 my-3">
+  <%  if(products.length==0 || products===undefined){%>
+  <div class="container my-5 py-5">
+
+    <h3>Cart is currently empty</h3>
+  </div>
+
+  <%}else{%>
+  <h4 class="text-dark mobile-gone mb-5 mt-0 pt-0">Cart</h4>
+  <div class="row desktop-gone mb-1">
+    <h4 class="text-dark">Cart</h4>
+    <p class=" small"><span class="grey"><%= totalQty %> item(s) </span> | $<%=parseFloat(totalPrice).toFixed(2)%> /mo</p>
+  </div>
+  <div class="row">
+
+
+    <div class="col col-md-8  col-12">
+      <div class="container">
+        <hr>
+        <%products.forEach(function (p,index) {%>
+        <div class="row my-md-4">
+          <div class="col desktop-gone text-right mb-2 pr-4 col-12">
+            <a href="/remove/<%=p.item._id%>"><span class="iconify desktop-gone grey small" data-icon="dashicons:trash" data-inline="false"></span></a>
+          </div>
+          <div class="col col-md-3 mb-2 col-12">
+            <img src="/images/black-box2.png" class="product-img" alt="">
+
+          </div>
+
+          <div class="col col-md-6 col-12">
+
+            <h7 class="text-dark font-weight-bold"><%=p.item.title%></h7>
+            <h7><%p.item.description%></h7><br>
+            <p class="mt-md-2 mt-3"> <a href="/add-to-cart/<%=p.item._id%> "><span class="iconify mr-3" style="font-size:1em" data-icon="el:plus" data-inline="false"></span></a> <%=p.qty%> <a href="/reduce/<%=p.item._id%>"><span class="iconify ml-3"
+                  style="font-size:1em" data-icon="el:minus" data-inline="false"></span></a></p>
+
+          </div>
+
+          <div class="col col-md-1 mobile-gone  col-12">
+            <a href="/remove/<%=p.item._id%>" class="small">delete</a>
+          </div>
+          <div class="col col-md-2 text-md-right mt-lg-0 my-3  col-12">
+            <p class="text-secondary font-weight-bold  ">$<%=parseFloat(p.price).toFixed(2)%></p>
+          </div>
+        </div>
+        <hr>
+
+
+        <%})%>
+
+        <div class="col col-12 desktop-gone checkout text-left py-3">
+          <h5 class="font-weight-bold text-left text-dark">Summary</h5>
+          <div class="row pt-4">
+            <div class="col col-6 text-left">
+              <p class=" text-dark">Subtotal </p>
+            </div>
+            <div class="col col-6 text-right">
+              <p class=" text-dark">$<%=parseFloat(totalPrice).toFixed(2)%> /mo</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col col-md-4 ml-0 pl-0 col-12 mobile-gone">
+      <div class="card bg-dark mb-4 checkout shadow-sm">
+        <div class="card-header text-left">
+          <h7 class="my-0 font-weight-bold  text-light">Summary</h7>
+        </div>
+        <div class="card-body px-3 ">
+          <div class="row">
+            <div class="col col-6 text-left">
+              <p class=" text-light">Subtotal </p>
+            </div>
+            <div class="col col-6 text-right">
+              <p class=" text-light">$<%=parseFloat(totalPrice).toFixed(2)%> /mo</p>
+            </div>
+          </div>
+
+
+          <a href="/checkout" class="btn btn-lg btn-block bg-orange btn-secondary my-2" id="all-star">Checkout</a>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+</div>
+
+
+<div class="container-fluid shadow-sm mobile-checkout desktop-gone py-3 bg-white">
+  <a href="/checkout" class="btn btn-lg btn-block bg-orange btn-secondary my-2" id="all-star">Checkout</a>
+</div>
+
+
+<%}%>
+
+
+<%- include("../partials/footer.ejs"); -%>

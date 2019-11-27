@@ -1,0 +1,18 @@
+<%-include("../partials/header")-%>
+<%- include("../modals/modal-signin.ejs"); -%>
+<%- include("../modals/modal-signup.ejs"); -%>
+
+<link rel="stylesheet" href="/css/signin.css">
+<div class="container px-3 mt-5 py-0">
+
+  <div class="container px-5 py-5  my-md-5 bg-white">
+    <h3 class="mb-4 pb-1 pt-4" style="font-weight:normal">Password reset link sent </h3>
+    <h3 class="mb-4 pb-1" style="font-weight:normal">Please check your email </h3>
+
+    <a class=" btn orange mt-md-5 my-lg-4 mb-4 button p-4 mr-1" href="/reset">Resend Link 🔗</a>
+
+  </div>
+
+</div>
+<hr class="mt-md-5 pt-md-5">
+<%- include("../partials/footer.ejs"); -%>

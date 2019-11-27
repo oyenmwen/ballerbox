@@ -1,0 +1,44 @@
+<%-include("partials/header")-%>
+<%- include("modals/modal-signin.ejs"); -%>
+<%- include("modals/modal-signup.ejs"); -%>
+
+
+<div class="container products text-center my-5 py-5">
+  <h1 class="h1"> Our Subscriptions</h1>
+  <div class="card-deck my-5 py-5 text-center">
+    <div class="card mb-4 shadow-sm">
+      <div class="card-header py-4">
+        <h4 class="my-0 font-weight-normal">All Star 🌟</h4>
+      </div>
+      <div class="card-body px-5 py-5">
+        <h1 class="card-title pricing-card-title sub">$15 <small class="text-muted">/ mo</small></h1>
+        <ul class="list-unstyled mt-3 mb-4 pb-3">
+          <li>1 Poster</li>
+          <li>1 Accessory</li>
+          <li>1 Mystery Item</li>
+        </ul>
+        <a href="/sub/5ddc048d40e0a69bbd9c60ed"><button type="button" class="btn btn-lg bg-orange btn-block btn-secondary">Choose Subscription</button></a>
+      </div>
+    </div>
+    <div class="card mb-4 shadow-sm">
+      <div class="card-header py-4">
+        <h4 class="my-0 font-weight-normal"> G.O.A.T 🐐</h4>
+      </div>
+      <div class="card-body px-5 py-5">
+        <h1 class="card-title pricing-card-title sub">$34 <small class="text-muted">/ mo</small></h1>
+        <ul class="list-unstyled mt-3 mb-4 pb-3">
+
+          <li>1 Top</li>
+          <li>1 Accessory</li>
+          <li>2 Posters</li>
+          <li>Mystery Item</li>
+        </ul>
+        <a href="/sub/5ddc048d40e0a69bbd9c60ee"><button type="button" class="btn bg-orange btn-lg btn-block btn-secondary">Choose Subscription</button></a>
+      </div>
+    </div>
+  </div>
+
+</div>
+</div>
+
+<%- include("partials/footer.ejs"); -%>

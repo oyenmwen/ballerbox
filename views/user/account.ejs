@@ -1,0 +1,84 @@
+<%- include("../partials/header") -%>
+<div class="container mt-lg-4 px-lg-5 px-0">
+
+  <!-- Dashboard Options -->
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col"><a href="/account">My plan 🏀</a></th>
+        <th scope="col"><a href="/user-orders">Orders 🛍</a></th>
+      </tr>
+    </thead>
+  </table>
+</div>
+
+<!-- Current Plan -->
+
+<div class="container">
+  <div class="container-fluid  pt-lg-1 px-lg-3 px-1 py-4 pr-lg-5 pb-lg-5">
+    <div class="container mt-lg-0 mt-3 px-lg-5 px-0 p-lg-5">
+      <h3 class="pb-lg-5 pb-4" style="font-size:1.5em">Subscription</h3>
+      <% if(plan==="GOAT Subscription"){%>
+      <div class="col px-lg-5 px-0">
+        <div class="card mb-4 shadow-sm">
+          <div class="card-header py-4">
+            <h4 class="my-0 font-weight-normal"> G.O.A.T </h4>
+          </div>
+          <div class="card-body py-5">
+            <h1 class="card-title px-5 pricing-card-title sub">🐐 <br /><small class="text-muted">Status</small></h1>
+            <ul class="list-unstyled mt-3 px-5 mb-4">
+              <li>1 Top</li>
+              <li>1 Accessory</li>
+              <li>2 Posters</li>
+              <li>Mystery Item</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <%}else if ((plan==="All Star Subscription")) {%>
+      <div class="col">
+        <div class="card mb-4 shadow-sm">
+          <div class="card-header py-4">
+            <h4 class="my-0 font-weight-normal">All Star 🌟</h4>
+          </div>
+          <div class="card-body px-5 py-5">
+            <h1 class="card-title pricing-card-title sub">🌟 <br><small class="text-muted">Status</small></h1>
+            <ul class="list-unstyled mt-3 mb-4 pb-3">
+              <li>1 Poster</li>
+              <li>1 Accessory</li>
+              <li>1 Mystery Item</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <%}else{%>
+      <div class="col px-lg-5">
+        <div class="card mb-4 shadow-sm">
+          <div class="card-header py-4">
+            <h4 class="my-0 font-weight-normal">Scout 🤓</h4>
+          </div>
+          <div class="card-body px-lg-5 py-5">
+            <h1 class="card-title pricing-card-title px-lg-5 sub">Scout 🔭 <span class="text-muted">Status</span></h1>
+            <ul class="list-unstyled mt-3 mb-4 pb-3">
+              <li>Weekly Newsletter</li>
+            </ul>
+            <a href="/products" class="btn btn-lg btn-secondary">Subscribe</a>
+          </div>
+        </div>
+      </div>
+      <%}%>
+</div>
+<div class="row">
+<div class="col mt-4">
+</div>
+</div>
+
+
+  <a href="/logout" class="btn btn-lg mt-4 btn-blockk px-lg-5 btn-outline-secondary">Log Out</a>
+
+</div>
+</div>
+
+
+<%- include("../partials/footer.ejs"); -%>

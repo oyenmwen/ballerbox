@@ -1,7 +1,12 @@
 html, body {
   text-align: center;
-  font-family: "Raleway", sans-serif;
+  font-family: "Roboto", sans-serif;
+  overflow-x: hidden;
+}
 
+.table, thead, tr, th {
+  table-layout: fixed;
+  width: 100%;
 }
 
 .container {
@@ -14,30 +19,56 @@ html, body {
   text-align: center;
 }
 
-/*
- * Custom translucent site header
- */
+.intro {
+  padding-left: 30%;
+}
+
+.o {
+  margin-left: 30%;
+}
+
+.h1 {
+  font-size: 2.5em;
+  font-weight: bold;
+  color: #5A6268;
+}
+
+.westbrook {
+  max-width: 100%;
+}
+
+.orange {
+  color: #8c2700;
+  background-color: #F8D2C2;
+}
+
+.bg-orange {
+  background-color: #cf643c;
+}
+
 nav {
-  /* background-color: rgba(0, 0, 0, .85); */
+  background-color: white;
 }
 
 #navbarSupportedContent a {
-  color: #999;
+  color: #5A6268;
   transition: ease-in-out color .15s;
 }
 
-#navbarSupportedContent a:hover {
-  color: #fff;
+#navbarSupportedContent a:hover, #sign-in-btn:hover {
+  color: #cf643c;
   text-decoration: none;
 }
 
-/*
- * Dummy devices (replace them with your own or something else entirely!)
- */
+#sign-in-btn:hover {
+  color: #white;
+  text-decoration: none;
+}
+
 h1 {
   font-family: "Roboto", sans-serif;
-  font-size: 3.5em;
-  font-weight: 400;
+  font-size: 2.8em;
+  color: black;
   line-height: 1.3;
 }
 
@@ -51,8 +82,16 @@ h3 {
 }
 
 p {
-  /* font-size: 2em; */
   color: black;
+}
+
+::-webkit-scrollbar {
+  width: 9px;
+  background-color: none;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cf643c !important;
 }
 
 #sock {
@@ -60,32 +99,12 @@ p {
 }
 
 .sub {
+  color: #cf643c !important;
+}
+
+span {
   color: #cf643c;
-}
-
-.product-device {
-  position: absolute;
-  right: 1%;
-  bottom: -30%;
-  width: 30%;
-  height: auto;
-  -webkit-transform: rotate(30deg);
-  transform: rotate(30deg);
-}
-
-.product-device::before {
-  position: absolute;
-  top: 10%;
-  right: 10px;
-  bottom: 10%;
-  left: 10px;
-  content: "";
-  border-radius: 5px;
-}
-
-#kobe-mj {
-  width: 90%;
-  height: auto;
+  font-weight: 500;
 }
 
 #space-jam {
@@ -93,31 +112,16 @@ p {
   height: auto;
 }
 
-.product-device-2 {
-  top: -25%;
-  right: auto;
-  bottom: 0;
-  left: 5%;
-  -webkit-transform: rotate(-30deg);
-  transform: rotate(-30deg);
-}
-
 .how p {
   font-size: 0.9em;
 }
 
 .how {
-  background-image: url("public/images/space-jam multi colored.png");
+  background-image: url("/images/space-jam multi colored.webp");
   background-repeat: no-repeat;
   background-position: 8% 65%;
   background-size: 27%;
-}
-
-.posters {
-  background-image: url("public/images/posters.png");
-  background-repeat: no-repeat;
-  background-position: 5em 12em;
-  background-size: 75%;
+  font-family: "Raleway", sans-serif;
 }
 
 .carousel-item img {
@@ -138,16 +142,83 @@ p {
 }
 
 .iconify {
-  color: black;
-  font-size: 3em;
+  color: #cf643c;
+  font-size: 2em;
 }
 
 #brand {
   font-family: "Anton", sans-serif;
-  color: lightgrey;
+  color: #cf643c;
   font-size: 1em;
 }
 
+.product-img {
+  width: 65%;
+}
+
+select {
+  font-size: 0.8em;
+}
+
+.modal, .modal-footer p {
+  text-align: center;
+}
+
+.modal-title {
+  font-weight: 900;
+  font-family: "Roboto", sans-serif;
+  color: #5A6268;
+  font-size: 1em;
+}
+
+.products .card {
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+.products .card:hover {
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.3);
+}
+
+.products a:hover {
+  text-decoration: none;
+}
+
+.form-check>p, a, div {
+  color: grey;
+}
+
+.privacy-policy p, a {
+  color: grey;
+}
+
+.privacy-policy>a {
+  text-decoration: underline;
+}
+
+.checkout {
+  font-family: "Montserrat", sans-serif;
+}
+
+.desktop-gone {
+  display: none;
+}
+
+.mobile-checkout {
+  overflow: hidden;
+  position: fixed;
+  /* Set the navbar to fixed position */
+  bottom: 0;
+  /* Position the navbar at the top of the page */
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  /* Full width */
+}
+
+.grey {
+  color: grey;
+}
 
 /*
  * Extra utilities
@@ -170,55 +241,94 @@ p {
   flex: 1;
 }
 
+input[type="radio"] {
+  visibility: hidden;
+}
+
 @media (min-width: 768px) {
   .flex-md-equal>* {
     -ms-flex: 1;
     -webkit-box-flex: 1;
     flex: 1;
   }
-
-
 }
 
-@media (max-width: 800px) {
-
-  .sign-in, #brand{
-    visibility: hidden;
-
+/* SM styling */
+@media (min-width: @screen-sm-min) and (max-width: @screen-sm-max) {
+  .container {
+    width: inherit;
   }
-.bars{
-  font-size: 2em;
-}
-h1{
-  font-size: 3em;
-  font-weight: bold;
-  color: #343a40;
+
+  .nav-acc {
+    display: none;
+    visibility: hidden;
+  }
 }
 
-.button {
-  width: 100%;
-  display:block;
- }
+@media (max-width: 500px) {
+  .westbrook {
+    display: none;
+  }
 
- .how {
-   background-image: none;
+  .product-img {
+    width: 45%;
+  }
 
- }
- .container {
+  .desktop-gone {
+    display: inline-block;
+  }
+}
 
-   left: 0;
- }
+@media (max-width: 986px) {
+  .mobile-gone {
+    display: none;
+  }
 
- .carousel {
-   position: relative;
-   height: 250px;
- }
- .iconify {
+  .sign-in, #brand {
+    visibility: hidden;
+  }
 
-   font-size: 1.5em;
- }
+  .btn-blockk {
+    display: block;
+    width: 100%;
+  }
 
+  .nav-acc {
+    display: none;
+    visibility: hidden;
+  }
 
+  .bars {
+    color: black;
+  }
+
+  h1 {
+    font-size: 3em;
+    font-weight: bold;
+    color: #343a40;
+  }
+
+  .button {
+    width: 100%;
+    display: block;
+  }
+
+  .how {
+    background-image: none;
+  }
+
+  .container {
+    left: 0;
+  }
+
+  .carousel {
+    position: relative;
+    height: 250px;
+  }
+
+  .iconify {
+    font-size: 1.5em;
+  }
 }
 
 .overflow-hidden {

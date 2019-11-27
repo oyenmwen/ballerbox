@@ -1,0 +1,57 @@
+<%- include("../partials/header") -%>
+<div class="container mt-lg-4 px-lg-5 px-0">
+
+  <!-- Dashboard Options -->
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col"><a href="/account">My plan 🏀</a></th>
+        <th scope="col"><a href="/user-orders">Orders 🛍</a></th>
+      </tr>
+    </thead>
+  </table>
+</div>
+
+<!-- Current Plan -->
+
+<div class="container">
+  <div class="container-fluid  pt-lg-1 px-lg-3 px-3 py-4 pr-lg-5 pb-lg-5">
+    <div class="container mt-lg-0 mt-3 px-lg-5 px-5 p-lg-5">
+      <%if(orders.length===0){%>
+      <h3>No orders yet!</h3>
+      <a href="/products" class="btn btn-lg bg-orange btn-secondary">Subscribe</a>
+
+      <%}%>
+    <%  orders.forEach(order => {%>
+      <%order.subscription.forEach((sub, index) => {%>
+      <div class="row">
+
+        <div class="col col-12 mb-3">
+          <strong>Order no:</strong> <%= order._id %>
+        </div>
+        <div class="col col-12 mb-3">
+          <strong>Subscription: </strong><%= sub.title %>
+        </div>
+        <div class="col col-12 mb-3">
+          <strong>Tracking:</strong> <%= order.trackingNumber %>
+        </div>
+      </div>
+      <hr>
+
+      <%});%>
+      <%});%>
+    </div>
+    <div class="row">
+      <div class="col mt-4">
+      </div>
+    </div>
+
+
+    <a href="/logout" class="btn btn-lg mt-4 btn-blockk px-lg-5 btn-outline-secondary">Log Out</a>
+
+  </div>
+</div>
+
+
+<%- include("../partials/footer.ejs"); -%>

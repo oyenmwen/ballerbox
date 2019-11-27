@@ -1,0 +1,11 @@
+<%- include("../home") -%>
+<%- include("../modals/post-sign-up-modal") -%>
+
+<script src="/js/confetti.js"></script>
+<script>
+   $(document).ready(function(){
+  confetti.start();
+  setInterval(function(){confetti.stop();},1500);
+  $('#postsignupModal').modal('show');
+});
+</script>
