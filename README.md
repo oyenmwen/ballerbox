@@ -5,11 +5,11 @@
 
 
 
-### Basketball Merchandise Subscription Service
-
-##### MongoDB | Express | Node.Js | Javascript <br /><br />
+### Basketball Merchandise Subscription Service <br /><br /><br />
 
 
+
+##### MongoDB | Express | Node.Js | Javascript 
 
 Basketball subscription service that allows users to receive a monthly box of basketball merchandise.
 
