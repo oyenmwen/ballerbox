@@ -1,4 +1,4 @@
-##  BALLERBOX 🏀 📦
+##  Ballerbox 🏀 📦
 
 ![https://ballerbox.ca](https://cdn.glitch.com/d158ad71-6fab-4a16-8439-3aa2acad57a1%2FScreen%20Shot%202019-11-25%20at%2011.48.43%20PM.png?v=1574827475868) <br /><br />
 
