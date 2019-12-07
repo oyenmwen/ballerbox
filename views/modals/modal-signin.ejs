@@ -25,9 +25,9 @@
             <script>$('document').ready(function(){$('#signinModal').modal('show')});</script>
             <div class="alert pb-0 alert-danger">
               <%errors.forEach(function(message){%>
-              <p><%=message.msg%></p>
+              <p class="text-dark small"><%=message.msg%></p>
+              <%});%>
             </div>
-        <%});%>
       <%}%>
           <form class="" action="/login" method="post">
             <div class="form-group">
