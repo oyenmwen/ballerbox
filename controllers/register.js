@@ -2,6 +2,7 @@ require('dotenv').config();
 const express = require('express');
 const mongoose = require("mongoose");
 const User = require('../models/user');
+const _ = require('lodash');
 const passport = require("passport");
 const passportLocalMongoose = require("passport-local-mongoose");
 const nodemailer = require("nodemailer");
@@ -29,16 +30,16 @@ exports.postRegister = async (req, res) => {
   username = req.body.username;
   const firstname= req.body.fname;
 
-  const errors = validationResult(req);
+  const errors = validationResult(req).array();
 
-  if (!(errors === undefined || errors.length == 0 || errors.length === undefined)) {
+  if (!(errors === undefined || errors.length == 0)) {
     res.render("home", {
       loggedin: false,
-      errors: errors.array(),
+      errors: _.uniqWith(errors, _.isEqual),
       login: false,
       modal:true
     });
-  }
+  }else{
   User.findOne({
     username: req.body.username
   }, (err, user) => {
@@ -71,7 +72,7 @@ exports.postRegister = async (req, res) => {
     (err, user) => {
       if (err) {
         console.log(err);
-        res.redirect("/register");
+        // res.redirect("/register");
       } else {
         passport.authenticate("local")(req, res, () => {
           res.render("user/post-sign-up",{
@@ -91,4 +92,5 @@ exports.postRegister = async (req, res) => {
         });
       }
     });
+  }
 };
