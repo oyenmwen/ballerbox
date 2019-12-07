@@ -32,15 +32,6 @@ exports.getLogin = (req, res) => {
 
 exports.postLogin = async (req, res, next) => {
 
-  const errors = validationResult(req);
-  if (!(errors === undefined || errors.length == 0 || errors.length === undefined)) {
-    res.render("home", {
-      loggedin: false,
-      errors: errors.array(),
-      login: true,
-      modal: true
-    });
-  }
   User.findOne({
     username: req.body.username
   }, (err, user) => {
@@ -94,11 +85,11 @@ exports.postLogin = async (req, res, next) => {
 //RESET Log In
 
 exports.getReset = (req, res, next) => {
-  const errors = validationResult(req);
+  const errors = validationResult(req).array();
   if (!(errors === undefined || errors.length == 0 || errors.length === undefined)) {
     res.render("auth/reset", {
       loggedin: false,
-      errors: errors.array(),
+      errors: errors,
       modal: false,
       login:false
     });
