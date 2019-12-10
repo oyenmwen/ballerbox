@@ -3,7 +3,7 @@ const express = require('express');
 const mongoose = require("mongoose");
 const passport = require("passport");
 const User = require('../models/user');
-const _ = require('lodash/string');
+const _ = require('lodash');
 const Order = require("../models/order");
 
 //GET ACCOUNT ROUTE
