@@ -21,7 +21,7 @@
       </div>
       <div class="modal-body text-center px-5 pb-5">
         <div class="container text-center">
-           <% if((!(errors === undefined || errors.length == 0))&&(!login)&&(modal)){%>
+          <% if((!(errors === undefined || errors.length == 0))&&(!login)&&(modal)){%>
             <script>$('document').ready(function(){$('#signupModal').modal('show')});</script>
             <div class="alert alert-danger pb-0">
               <%errors.forEach(function(message){%>

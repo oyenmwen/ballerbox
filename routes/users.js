@@ -17,8 +17,8 @@ router.post("/reset", loginController.postReset);
 router.get("/reset/:token", loginController.getNewPassword);
 router.post("/new-password", [
   check('username', 'Invalid email').isEmail(),
-  check('password', 'The password must be 5+ chars long and contain a number')
-  .not().isIn(['12345', 'password', 'qwert', 'letmein', 'qwerty']).withMessage('Do not use a common word as the password')
+  check('password', 'The password must be longer than 5 characters and must contain a number')
+  .not().isIn(['12345', 'password', 'qwert', 'letmein', 'qwerty']).withMessage('Sorry your password is much too common')
   .isLength({
     min: 5
   })
@@ -27,8 +27,8 @@ router.post("/new-password", [
 router.get("/logout", accountController.getLogout);
 router.post("/register", [
   check('username', 'Invalid email').isEmail(),
-  check('password', 'The password must be 5+ chars long and contain a number')
-  .not().isIn(['12345', 'password', 'qwert', 'letmein', 'qwerty']).withMessage('Do not use a common word as the password')
+  check('password', 'The password must be longer than 5 characters and must contain a number')
+  .not().isIn(['12345', 'password', 'qwert', 'letmein', 'qwerty']).withMessage('Sorry your password is much too common')
   .isLength({
     min: 5
   })
