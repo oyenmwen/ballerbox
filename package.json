@@ -26,7 +26,7 @@
     "express-session": "^1.17.0",
     "express-validator": "^6.2.0",
     "helmet": "^3.21.2",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.21",
     "mongoose": "^5.7.11",
     "mongoose-encryption": "^2.0.2",
     "morgan": "^1.9.1",
